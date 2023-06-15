@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{/* pseudoclase raiz para crear varialbes o custom prop*/
+    --poppins: 'Poppins', sans-serif;
+    --open-sans: 'Open Sans', sans-serif;
+
+    --pink: hsl(322, 100%, 66%);
+    --light-pink: hsl(321, 100%, 78%);
+    --light-red: hsl(0, 100%, 63%);
+    --very-dark-cyan: hsl(192, 100%, 9%);
+    --very-pale-blue: hsl(207, 100%, 98%);
+
+    --padding-container: 80px 0; /*relleno de los padres, arriba abajo y los lados*/
+
+    
+}
+
+
+body{   
+    font-family: var(--open-sans); /*referencia el valor de la custom p*/
+}
+
+.container{
+    /* background-color: #000; solamente para verifica*/
+    width: 90%;
+    max-width: 1200px;/*que ese ancho de 90 no rebale los 1200px*/
+    margin: 0 auto;/*centrar*/
+    overflow: hidden;/*todo lo que salga del contenedor se esconda*/
+    padding: var(--padding-container);
+}
+
+.hero{
+    min-height: 100vh;
+    position: relative;
+    --wave-bottom: url("../images/bg-section-top-mobile-1.svg");
+}
+
+.hero__nav{
+    display: flex;/*para que cada elemento se ponga uno al lado del otroaaa*/
+    justify-content: space-between;/*para que todos los elementos se peguen a las esquinas*/
+    align-items: center;/*para centrar verticalemnte */
+    --padding-container: 60px 0 45px; /*arriba y abajo*/
+}
+
+.hero__logo{
+    width: 45%;
+    max-width: 160px;
+}
+
+.hero__huddle{
+    width: 100%;
+    display: block; /*para quitar el margen que tienen las img*/
+}
+
+.hero__cta{
+    color: var(--light-pink);/*custom*/
+    text-decoration: none;
+    border: 2px solid;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 0 1px;/*x y blur*/
+}
+
+.hero__main{
+    text-align: center;
+    color: var(--very-dark-cyan);
+}
+
+.hero__tittle{
+    font-family: var(--poppins);
+}
+
+.hero__paragraph{
+    width: 90%;
+    margin: 16px auto; /*para separar al title y al bottom*/
+    line-height: 1.5;/*separador de lineas de texto*/
+}
+
+.cta{
+    display: inline-block;
+    background-color: var(--pink);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.hero__picture{
+    margin-top: 80px;/*para que se separe del boton*/
+}
+
+.hero__img{
+    width: 100%;
+    max-width: 600px;/*para cuando hagamos mas grande el navegador*/
+    margin: 0 auto;/*para centrarlo verti*/
+    display: block;/*para evitar el borde de las imagenes */
+}
+
+.hero__numbers{
+    margin-top: 80px;
+    display: flex;/*se ponen uno al lado del otro*/
+    flex-direction: column;
+    align-items: center;/*ce trar horizontalmente*/
+    padding-bottom: 100px;
+    gap: 60px;/*espaciado entre los flex item*/
+}
+
+.hero__item{
+    overflow: hidden;
+    /* margin-bottom: 30px; lo hacemos con gap*/
+}
+
+.hero__number{
+    font-size: 60px;
+}
+
+.hero__icon{
+    display: block;
+}
+
+.wave{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    /* background-color: #000; */
+    background-repeat: no-repeat;
+    background-size: 100% 100px;/*ancho y alto*/
+}
+
+.wave--bottom{
+    left: 0;
+    bottom: 0;
+    background-image: var(--wave-bottom);/*lo colocamos en hero*/
+}
+
+.wave--top{
+    left: 0;
+    top: 0;
+    background-image: var(--wave-top); /*wave ondas*/
+}
+
+.section{
+    background-color: var(--very-pale-blue);
+    --padding-container: 110px 0;
+}
+
+.section--white{
+    background-color: #fff;
+    position: relative;
+    --padding-container: 210px 0;
+    --wave-top: url("../images/bg-section-bottom-mobile-1.svg");/*wave top de la cuestion*/
+    --wave-bottom: url("../images/bg-section-top-mobile-2.svg");/*wave top de la cuestion*/
+}
+
+.sectrion__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.section__img{
+    width: 100%;
+    max-width: 350px;/*que el width 100% no rebase o exeda 350px*/
+    display: block;
+    margin: 0 auto; /*si rebasa los 350pz se centra*/
+}
+
+.section__texts{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.subtitle{
+    margin-bottom: 16px;
+    font-size: var(--poppins);
+}
+
+.question{
+    position: relative;
+    text-align: center;
+    --wave-top: url("../images/bg-section-bottom-mobile-2.svg");/*wave top de la cuestion*/
+    --wave-bottom: url("../images/bg-footer-top-mobile.svg");/*wave top de la cuestion*/
+
+    --padding-container: 190px 0 200px ; /*190 0 200 arriba y abajo*/
+}
+
+.footer{
+    color: #fff;
+    background-color: var(--very-dark-cyan);
+}
+
+.footer__title{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    font-family: var(--poppins);
+}
+
+.footer__paragraph{
+    line-height: 1.5;
+    margin: 16px 0 50px;
+}
+
+.footer__form{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.footer_input{
+    flex-basis: 100%;
+    flex-grow: 1; /*para que ocupe el 100% de ancho*/
+    font-size: 16px;
+    font-family: var(--open-sans);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 16px 6px;/*arriba abajo - hacia izq derec*/
+    margin-bottom: 20px;
+}
+
+.footer_cta{
+    font-size: 16px;
+    font-family: var(--open-sans);
+    background-color: var(--pink);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 40px;
+    font-weight: 600;
+    margin-left: auto; /*mg-l auto para madarlo a la derecha*/
+}
+
+.footer__contact{
+    line-height: 40px;
+}
+
+.footer__contact::after{ /*para poner un elemento despues de icono, ejemplo como numero de tel e-mail etc*/
+    content: "Phone: +1-543-123-4567";
+    margin-left: 40px ;
+}
+
+.footer__contact--email::after{/*lo mismo en este caso*/
+    content: "example@huddle.com";
+}
+
+.footer__social{
+    display: flex;
+    justify-content: center; /*centrar contenido horizontalmente*/
+    gap: 16px   ; /*espaciado*/
+    margin-top: 30px;
+}
+
+.footer__link{
+    text-decoration: none;
+    width: 40px;/*hacer grandes los iconos*/
+}
+
+.footer__icon{
+    width: 100%;
+    display: block;
+}
+
+@media(min-width:768px){/*esto quiere decir que una vez un minimo de 768 la pagina va a cambiar modficando las propiedades de cada clase*/
+    .hero{
+        --wave-bottom: url("../images/bg-section-top-desktop-1.svg"); /*para escritorio*/
+    }
+    .hero__tittle{
+        font-size: 48px; /*pasa a ser mas grande*/
+    }
+    .hero__paragraph{
+        width: 70%;
+    }
+
+    .cta{
+        padding: 16px 45px;
+    }
+
+    .hero__numbers{
+        flex-direction: row; /*en fila*/
+        justify-content: space-around ;/*se dividen el espacio equitativamente*/
+    }
+
+    .section--white{
+        --wave-top: url("../images/bg-section-bottom-desktop-1.svg");
+        --wave-bottom: url("../images/bg-section-top-desktop-2.svg");
+    }
+
+    .sectrion__container{
+        flex-direction: row-reverse;
+        align-items: center;/*centrar elementos*/
+        justify-content: space-between;/*que se peguen a las esquinas horiz*/
+
+    }
+
+    .sectrion__container--inverse{
+        flex-direction: row; /*modificador para que se haga inverso a la fila anterior*/
+    }
+
+    .section__picture{
+        width: 50%;
+    }
+
+    .section__texts{
+        width: 45%;
+        margin: 0; /*le quitamos el margin por defecto*/
+        text-align: start;
+    }
+
+    .question{
+        --wave-top: url("../images/bg-section-bottom-desktop-1.svg");/*cambiamos desktop*/
+        --wave-bottom: url("../images/bg-footer-top-desktop.svg");
+    }
+
+    .footer__container{
+        --padding-container: 110px 0 ; /*arriba y abajo*/
+        display: flex;/*elemento uno al lado del otro*/
+        justify-content: space-between;
+
+    }
+    
+    .footer__newsletter{
+        width: 50%;
+        max-width: 350px;
+        order: 1;/*para pasar content a la derecha*/
+    }
+
+    .footer__paragraph{
+        margin: 16px 0 30px;
+    }
+}
